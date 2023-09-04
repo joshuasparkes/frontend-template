@@ -59,7 +59,7 @@ const Waitlist = forwardRef((props, ref) => {
             <IconButton style={{alignSelf: 'flex-end'}} onClick={props.handleModalClose}>
                 <CloseIcon />
             </IconButton>
-            <img style={{height: '40px'}} src={Logo} alt="PMAI Logo" className="spinning-logo" />
+            <img style={{height: '40px', width: 'auto'}} src={Logo} alt="PMAI Logo" className="spinning-logo" />
 
             <h2>Be the first to use AI assisted therapy</h2>
             <h4 style={{margin: '30px 0px'}}>Exclusive access to the next big leap in therapeutic care.</h4>
