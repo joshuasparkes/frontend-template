@@ -6,65 +6,70 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/App.css";
 import Logo from "./images/logo.png";
-import Screenshot1 from "./images/Screenshot1.png";
-import Footer from './components/footer' ;
+import Feed from "./images/Feed.png";
+import Screenshot from "./images/Screenshot.png";
+import Graph from "./images/graph.png";
+import Footer from "./components/footer";
+import Modal from "@mui/material/Modal";
+import Waitlist from "./components/waitlist"; // Import the separate ModalContent component
+
 // import { auth } from "../src/firebase";
 
 function App() {
   // const [loggedIn, setLoggedIn] = useState(false);
   const [selected, setSelected] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
 
   const items = [
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Instant",
+      content: "Detect subtle emotional cues instantly.        ",
     },
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Enhance",
+      content: "Enhance therapeutic understanding.        ",
     },
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Communication",
+      content: "Improve client-therapist communication.        ",
     },
   ];
 
   const items2 = [
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Accuracy",
+      content: "Accurate emotional assessment using video analytics.        ",
     },
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Outcomes",
+      content: "Reduce misinterpretations & enhance session outcomes.        ",
     },
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Learning",
+      content: "Continual learning for consistently refined insights.        ",
     },
   ];
 
   const items3 = [
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        ",
+      name: "Integration",
+      content: "Easy integration with popular telehealth platforms.        ",
     },
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.      .        ",
+      name: "Display",
+      content: "Non-intrusive insights displayed intuitively.        ",
     },
     {
-      name: "Header",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Security",
+      content: "Secure & compliant data handling.        ",
     },
   ];
 
@@ -102,60 +107,56 @@ function App() {
           ) : (
             <> */}
           <div style={{ marginTop: "10px" }}>
-          <Link to="/dashboard" className="create-account-btn">
+            {/* <Link to="/dashboard" className="create-account-btn">
               Dashboard
-            </Link>
-          <Link to="/pricing" className="create-account-btn">
+            </Link> */}
+            {/* <Link to="/pricing" className="create-account-btn">
               Pricing
+            </Link> */}
+            <Link onClick={handleModalOpen} className="create-account-btn">
+              Join Waitlist
             </Link>
-            <Link to="/signUp" className="create-account-btn">
-              Sign Up
-            </Link>
-            <Link to="/signIn" className="sign-up-btn">
+            {/* <Link to="/signIn" className="sign-up-btn">
               Log In
-            </Link>
+            </Link> */}
           </div>
           {/* </>
           )} */}
         </div>
       </div>
       <div className="container1">
-        <h1 className="title">Heading</h1>
+        <h1 className="title">Revolutionizing Online Therapy</h1>
         <h2 className="subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          AI-powered insights to elevate every therapy session. Join the
+          waitlist and be the first to experience the future of therapy.
         </h2>
         <div className="btn-container">
-          <button className="btn">CTA</button>
+          <button className="btn" onClick={handleModalOpen}>
+            Join Now
+          </button>
         </div>
       </div>
-      {/* <div className="container1b">
-        <video
-          src="/ScreenRecording1.mp4"
-          autoPlay
-          className="lpVid"
-          loop
-          muted
-          playsInline
+      <div className="container1b">
+        <img
+          width={"auto"}
+          height={"80%"}
+          className={"lpimage"}
           style={{
-            width: "75%",
-            height: "auto",
+            width: "70%",
             borderWidth: "1px",
             borderColor: "gray",
             borderStyle: "solid",
             borderRadius: "10px",
           }}
-          type="video/mp4"
-          onError={(e) => {
-            console.error("Video error:", e);
-          }}
+          src={Screenshot}
+          alt="Softkraft process"
         />
-      </div> */}
+      </div>
       <div className="container2">
         <div className="problem-section">
           <div className="h3AndP">
-            <h2 className="section-header">Section</h2>
-            <h3>Add Text Here</h3>
+            <h2 className="section-header">Real-time Analysis</h2>
+            <h3>Insights as Conversations Unfold</h3>
             <ul>
               {items.map((item, index) => (
                 <li
@@ -182,11 +183,13 @@ function App() {
                 </li>
               ))}
             </ul>
-            <button className="section-btn">CTA</button>
+            <button className="section-btn" onClick={handleModalOpen}>
+              Join
+            </button>
           </div>
           <img
             width={"auto"}
-            height={"250px"}
+            height={"300px"}
             className={"lpimage"}
             style={{
               borderWidth: "1px",
@@ -194,15 +197,15 @@ function App() {
               borderStyle: "solid",
               borderRadius: "10px",
             }}
-            src="https://www.softkraft.co/static/cee02d36ebf9d0d4af095be15317b27b/c74de/steps-process.webp"
+            src={Screenshot}
             alt="Softkraft process"
           />
         </div>
 
         <div className="problem-section2">
           <div className="h3AndP">
-            <h2 className="section-header">Section</h2>
-            <h3>Add Text Here.</h3>
+            <h2 className="section-header">AI-Powered Precision</h2>
+            <h3>Beyond Traditional Observations</h3>
             <ul>
               {items2.map((item, index) => (
                 <li
@@ -229,27 +232,23 @@ function App() {
                 </li>
               ))}
             </ul>
-            <button className="section-btn">CTA</button>
+            <button className="section-btn" onClick={handleModalOpen}>
+              Join
+            </button>
           </div>
           <img
             width={"auto"}
             height={"250px"}
             className={"lpimage"}
-            style={{
-              borderWidth: "1px",
-              borderColor: "gray",
-              borderStyle: "solid",
-              borderRadius: "10px",
-            }}
-            src="https://www.explorium.ai/wp-content/uploads/2019/12/Decision-Trees-2.png"
+            src={Feed}
             alt="Softkraft process"
           />
         </div>
 
         <div className="problem-section3">
           <div className="h3AndP">
-            <h2 className="section-header">Section</h2>
-            <h3>Add Text here.</h3>
+            <h2 className="section-header">Seamless Integration</h2>
+            <h3>Enhancing Virtual Sessions</h3>
             <ul>
               {items3.map((item, index) => (
                 <li
@@ -276,25 +275,26 @@ function App() {
                 </li>
               ))}
             </ul>
-            <button className="section-btn">CTA</button>
+            <button className="section-btn" onClick={handleModalOpen}>
+              Join
+            </button>
           </div>
           <img
             width={"auto"}
-            height={"250px"}
+            height={"150px"}
             className={"lpimage"}
-            style={{
-              borderWidth: "1px",
-              borderColor: "gray",
-              borderStyle: "solid",
-              borderRadius: "10px",
-            }}
-            src={Screenshot1}
+            src={Graph}
             alt="PMAI Logo"
           />
         </div>
       </div>
 
       <Footer />
+
+      <Modal open={openModal} onClose={handleModalClose}>
+        <Waitlist handleModalClose={handleModalClose} />
+      </Modal>
+
       {/* <PriorityModal
         isOpen={showPriorityModal}
         onClose={() => setShowPriorityModal(false)}

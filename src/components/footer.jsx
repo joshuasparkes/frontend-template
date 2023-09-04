@@ -8,10 +8,10 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography  variant="body2" color="#fff">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="#fff">
+        TherapInsights
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -40,7 +40,7 @@ export default function StickyFooter() {
         >
           <Container maxWidth="sm">
             <Typography color={'white'} variant="body1">
-              My sticky footer can be found here.
+              TherapInsights
             </Typography>
             <Copyright />
           </Container>
