@@ -17,7 +17,7 @@ const Waitlist = forwardRef((props, ref) => {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         backgroundColor: 'white',
-        padding: '30px',
+        padding: '50px',
         borderRadius: '10px',
         width: 'fit-content',
         fontFamily: 'Montserrat, sans-serif',
@@ -26,6 +26,7 @@ const Waitlist = forwardRef((props, ref) => {
     const inputStyle = {
         width: '50vw',
         marginBottom: '10px',
+        height: '40px',
         borderRadius: '5px',
         border: '1px solid lightgray',
     };
