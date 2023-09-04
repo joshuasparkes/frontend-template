@@ -138,11 +138,10 @@ function App() {
       </div>
       <div className="container1b">
         <img
-          width={"auto"}
-          height={"80%"}
+          width={"90%"}
+          height={"auto"}
           className={"lpimage"}
           style={{
-            width: "70%",
             borderWidth: "1px",
             borderColor: "gray",
             borderStyle: "solid",
@@ -188,8 +187,8 @@ function App() {
             </button>
           </div>
           <img
-            width={"auto"}
-            height={"300px"}
+            width={"350px"}
+            height={"auto"}
             className={"lpimage"}
             style={{
               borderWidth: "1px",
@@ -237,8 +236,8 @@ function App() {
             </button>
           </div>
           <img
-            width={"auto"}
-            height={"250px"}
+            width={"350px"}
+            height={"auto"}
             className={"lpimage"}
             src={Feed}
             alt="Softkraft process"
@@ -280,8 +279,8 @@ function App() {
             </button>
           </div>
           <img
-            width={"auto"}
-            height={"150px"}
+            width={"350px"}
+            height={"auto"}
             className={"lpimage"}
             src={Graph}
             alt="PMAI Logo"
